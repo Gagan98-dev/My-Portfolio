@@ -1,0 +1,263 @@
+
+/* BASIC RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #080d1a;
+    color: #ffffff;
+    line-height: 1.7;
+}
+
+/* NAVIGATION */
+header {
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    background: rgba(8, 13, 26, 0.95);
+    border-bottom: 1px solid #1d2b45;
+}
+
+.navbar {
+    max-width: 1200px;
+    margin: auto;
+    padding: 20px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 27px;
+    font-weight: bold;
+    color: white;
+    text-decoration: none;
+}
+
+.logo span {
+    color: #168cff;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 25px;
+}
+
+.nav-links a {
+    color: #c5cede;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.nav-links a:hover {
+    color: #168cff;
+}
+
+/* COMMON SECTION */
+section {
+    max-width: 1200px;
+    margin: auto;
+    padding: 110px 30px;
+}
+
+section h2 {
+    font-size: 35px;
+    margin-bottom: 25px;
+    color: #ffffff;
+}
+
+section h2::after {
+    content: "";
+    display: block;
+    width: 65px;
+    height: 4px;
+    background: #168cff;
+    margin-top: 10px;
+    border-radius: 5px;
+}
+
+/* HOME */
+#home {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding-top: 150px;
+}
+
+#home > p:first-child {
+    color: #168cff;
+    font-size: 20px;
+}
+
+#home h1 {
+    font-size: 75px;
+    margin: 10px 0;
+    letter-spacing: 3px;
+}
+
+#home h2 {
+    color: #168cff;
+    font-size: 30px;
+}
+
+#home h2::after {
+    display: none;
+}
+
+#home p {
+    max-width: 650px;
+    color: #aebbd0;
+    margin-bottom: 25px;
+}
+
+/* BUTTONS */
+.btn {
+    display: inline-block;
+    padding: 12px 25px;
+    background: #168cff;
+    color: white;
+    text-decoration: none;
+    border-radius: 6px;
+    margin-right: 12px;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    background: #0064c8;
+    transform: translateY(-3px);
+}
+
+.btn.secondary {
+    background: transparent;
+    border: 1px solid #168cff;
+}
+
+/* ABOUT */
+#about p {
+    max-width: 850px;
+    color: #aebbd0;
+    font-size: 17px;
+}
+
+/* SKILLS */
+.skills-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.skills-list span {
+    padding: 12px 22px;
+    background: #111d32;
+    border: 1px solid #20395c;
+    border-radius: 8px;
+    color: #65b3ff;
+    transition: 0.3s;
+}
+
+.skills-list span:hover {
+    background: #168cff;
+    color: white;
+    transform: translateY(-5px);
+}
+
+/* PROJECTS */
+.project-list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+}
+
+.project-card {
+    padding: 30px;
+    background: #111d32;
+    border: 1px solid #20395c;
+    border-radius: 12px;
+    transition: 0.3s;
+}
+
+.project-card:hover {
+    transform: translateY(-7px);
+    border-color: #168cff;
+}
+
+.project-card h3 {
+    color: #65b3ff;
+    margin-bottom: 12px;
+    font-size: 22px;
+}
+
+.project-card p {
+    color: #aebbd0;
+}
+
+/* EDUCATION */
+#education h3 {
+    color: #65b3ff;
+    margin-bottom: 10px;
+}
+
+#education p {
+    color: #aebbd0;
+}
+
+/* CONTACT */
+#contact a {
+    color: #65b3ff;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+#contact p {
+    color: #aebbd0;
+    margin-bottom: 15px;
+}
+
+/* FOOTER */
+footer {
+    text-align: center;
+    padding: 25px;
+    background: #050914;
+    color: #8493aa;
+    border-top: 1px solid #1d2b45;
+}
+
+/* MOBILE RESPONSIVENESS */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .nav-links {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 12px;
+    }
+
+    #home h1 {
+        font-size: 48px;
+    }
+
+    #home h2 {
+        font-size: 23px;
+    }
+
+    section h2 {
+        font-size: 28px;
+    }
+
+    .project-list {
+        grid-template-columns: 1fr;
+    }
+}
