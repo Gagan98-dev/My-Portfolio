@@ -1,197 +1,392 @@
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gagan M. | Portfolio</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f5f2ec">
+  <title>Gagan M. | Aspiring Software Developer</title>
+  <meta name="description" content="Portfolio of Gagan M., an Information Science and Engineering student building software projects with Python, React and FastAPI.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,100..900&family=Newsreader:opsz,wght@6..72,400;6..72,500&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+
+  <script>
+    document.documentElement.classList.add('js');
+    try {
+      const savedTheme = localStorage.getItem('theme');
+      if (savedTheme) {
+        document.documentElement.setAttribute('data-theme', savedTheme);
+      }
+    } catch (error) {
+      console.log('Theme preference unavailable.');
+    }
+  </script>
 </head>
 
-<body>
+<body class="is-loading">
 
-    <!-- Navigation Bar -->
-    <header>
-        <nav class="navbar">
-            <a href="#home" class="logo">GAGAN<span>.</span></a>
+  <!-- INTRO -->
+  <div class="intro" id="intro" aria-hidden="true">
+    <span class="intro__a">GAGAN</span>
+    <span class="intro__b">M.</span>
+    <p class="intro__sub">
+      Aspiring software developer, building things that work.
+    </p>
+  </div>
 
-            <ul class="nav-links">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#skills">Skills</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#education">Education</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
+  <a class="skip" href="#about">Skip to content</a>
+  <div class="cursor" aria-hidden="true"></div>
 
-    <main>
+  <!-- LEFT INFORMATION PANEL -->
+  <header class="panel">
 
-        <!-- Home Section -->
-        <section id="home">
+    <a class="brand" href="#home">
+      <strong>Gagan M.</strong>
+      <span>Aspiring software developer</span>
+    </a>
 
-            <p class="intro">Hello, I'm</p>
+    <button class="menu-btn" id="menuBtn" type="button"
+      aria-label="Open menu" aria-expanded="false" aria-controls="nav">
+      <span></span>
+      <span></span>
+    </button>
 
-            <h1>GAGAN M.</h1>
+    <nav class="nav" id="nav" aria-label="Main navigation">
+      <a href="#home" class="active">Home</a>
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#projects">Projects</a>
+      <a href="#education">Education</a>
+      <a href="#contact">Contact</a>
+    </nav>
 
-            <h2>Aspiring Software Developer</h2>
+    <div class="panel__foot">
+      <p>
+        Karnataka, India<br>
+        B.E. ISE, class of 2028
+      </p>
 
-            <p class="hero-description">
-                I build practical software solutions and explore
-                Full-Stack Development, Python and Artificial Intelligence.
-                Passionate about learning new technologies and creating
-                meaningful applications.
-            </p>
+      <button class="theme-btn" id="themeBtn" type="button"
+        aria-label="Switch colour theme">
+        <span class="theme-btn__dot"></span>
+        <span class="theme-btn__label">Dark mode</span>
+      </button>
+    </div>
 
-            <div class="hero-buttons">
-                <a href="#projects" class="btn">Explore My Work</a>
-                <a href="#contact" class="btn secondary">Contact Me</a>
-            </div>
+  </header>
 
-        </section>
+  <main>
 
-        <!-- About Section -->
-        <section id="about">
+    <!-- HERO SECTION -->
+    <section class="hero" id="home">
 
-            <h2>About Me</h2>
+      <h1 class="hero__words">
+        <span class="w w1" data-from="left">Code.</span>
+        <span class="w w2" data-from="right">Build.</span>
+        <span class="w w3" data-from="left">Learn.</span>
+      </h1>
 
+      <div class="hero__bottom" data-reveal="right">
+
+        <p>
+          Hi, I'm <b>Gagan M.</b> An Information Science student
+          learning to build full-stack software, one real project
+          at a time.
+        </p>
+
+        <div class="hero__cta">
+
+          <a class="btn btn--fill" href="#projects">
+            <span>See my projects</span>
+          </a>
+
+          <a class="btn" href="#contact">
+            <span>Get in touch</span>
+          </a>
+
+          <!-- DOWNLOAD RESUME BUTTON -->
+          <a class="btn"
+             href="assets/gagan_resume.pdf"
+             download="gagan_resume.pdf">
+            <span>Download Resume ↓</span>
+          </a>
+
+        </div>
+      </div>
+
+      <!-- MOVING SKILLS MARQUEE -->
+      <div class="marquee" aria-hidden="true">
+        <div class="marquee__track">
+          <span>Python</span>
+          <span>Java</span>
+          <span>C</span>
+          <span>JavaScript</span>
+          <span>SQL</span>
+          <span>React.js</span>
+          <span>FastAPI</span>
+          <span>PostgreSQL</span>
+          <span>MySQL</span>
+
+          <span>Python</span>
+          <span>Java</span>
+          <span>C</span>
+          <span>JavaScript</span>
+          <span>SQL</span>
+          <span>React.js</span>
+          <span>FastAPI</span>
+          <span>PostgreSQL</span>
+          <span>MySQL</span>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- ABOUT SECTION -->
+    <section class="section about" id="about">
+
+      <h2 data-reveal="left">About me</h2>
+
+      <div class="about__body" data-reveal="right">
+
+        <p class="lead">
+          I enjoy learning by building practical projects
+          and solving real-world problems.
+        </p>
+
+        <p>
+          I am an Information Science and Engineering student
+          interested in software development, full-stack
+          development, Python, programming and emerging technologies.
+        </p>
+
+      </div>
+    </section>
+
+    <!-- SKILLS SECTION -->
+    <section class="section" id="skills">
+
+      <h2 data-reveal="left">Skills and technologies</h2>
+
+      <div class="skills">
+
+        <div class="skill" data-reveal="right">
+          <h3>Programming</h3>
+          <ul>
+            <li>Python</li>
+            <li>Java</li>
+            <li>C</li>
+            <li>JavaScript</li>
+            <li>SQL</li>
+          </ul>
+        </div>
+
+        <div class="skill" data-reveal="left">
+          <h3>Web development</h3>
+          <ul>
+            <li>HTML</li>
+            <li>CSS</li>
+            <li>React.js</li>
+            <li>FastAPI</li>
+          </ul>
+        </div>
+
+        <div class="skill" data-reveal="right">
+          <h3>Database</h3>
+          <ul>
+            <li>PostgreSQL</li>
+            <li>MySQL</li>
+          </ul>
+        </div>
+
+        <div class="skill" data-reveal="left">
+          <h3>Tools</h3>
+          <ul>
+            <li>Git</li>
+            <li>GitHub</li>
+            <li>VS Code</li>
+          </ul>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- PROJECTS SECTION -->
+    <section class="section" id="projects">
+
+      <h2 data-reveal="left">Selected projects</h2>
+
+      <p class="note" data-reveal="right">
+        A collection of projects I have worked on.
+        EV FastFleet is currently in progress.
+      </p>
+
+      <ul class="projects">
+
+        <!-- EV FASTFLEET -->
+        <li class="project" data-reveal="right">
+
+          <div class="project__main">
+            <h3>EV FastFleet</h3>
             <p>
-                I am a third-year B.E. Information Science and Engineering
-                student at Sir M. Visvesvaraya Institute of Technology.
-
-                I am passionate about software development, programming,
-                full-stack development and emerging technologies.
-
-                My goal is to build practical applications, improve my
-                technical skills and solve real-world problems through code.
+              An EV fleet management and operational analytics
+              platform designed to manage electric vehicle fleets
+              and support smarter fleet operations.
             </p>
+          </div>
 
-        </section>
+          <p class="project__tech">
+            React, FastAPI, Python, PostgreSQL
+          </p>
 
-        <!-- Skills Section -->
-        <section id="skills">
+          <span class="status status--live">In Progress</span>
+        </li>
 
-            <h2>My Skills</h2>
+        <!-- STUDENT MANAGEMENT SYSTEM -->
+        <li class="project" data-reveal="left">
 
-            <div class="skills-list">
-                <span>Python</span>
-                <span>Java</span>
-                <span>C Programming</span>
-                <span>JavaScript</span>
-                <span>HTML</span>
-                <span>CSS</span>
-                <span>React.js</span>
-                <span>FastAPI</span>
-                <span>PostgreSQL</span>
-                <span>SQL</span>
-                <span>Git</span>
-                <span>GitHub</span>
-                <span>VS Code</span>
-            </div>
-
-        </section>
-
-        <!-- Projects Section -->
-        <section id="projects">
-
-            <h2>My Projects</h2>
-
-            <div class="project-list">
-
-                <div class="project-card">
-                    <h3>EV FastFleet</h3>
-                    <p>
-                        An EV fleet management and operational analytics
-                        platform designed to manage electric vehicle fleets
-                        and support data-driven decisions.
-                    </p>
-                    <span class="project-tech">React | FastAPI | Python | PostgreSQL</span>
-                    <span class="project-status">In Progress</span>
-                </div>
-
-                <div class="project-card">
-                    <h3>Student Management System</h3>
-                    <p>
-                        An application concept for managing student
-                        information and academic records.
-                    </p>
-                    <span class="project-tech">Java</span>
-                    <span class="project-status">Planned</span>
-                </div>
-
-                <div class="project-card">
-                    <h3>Library Management System</h3>
-                    <p>
-                        An application concept for managing books,
-                        library records and borrowing operations.
-                    </p>
-                    <span class="project-tech">C Programming</span>
-                    <span class="project-status">Planned</span>
-                </div>
-
-                <div class="project-card">
-                    <h3>Hotel Management System</h3>
-                    <p>
-                        An application concept for managing hotel rooms,
-                        reservations and customer information.
-                    </p>
-                    <span class="project-tech">To be decided</span>
-                    <span class="project-status">Planned</span>
-                </div>
-
-                <div class="project-card">
-                    <h3>Personal Portfolio Website</h3>
-                    <p>
-                        A personal website showcasing my profile,
-                        education, technical skills and projects.
-                    </p>
-                    <span class="project-tech">HTML | CSS | JavaScript</span>
-                    <span class="project-status">In Progress</span>
-                </div>
-
-            </div>
-
-        </section>
-
-        <!-- Education Section -->
-        <section id="education">
-
-            <h2>Education</h2>
-
-            <div class="education-card">
-                <h3>B.E. Information Science and Engineering</h3>
-                <p>Sir M. Visvesvaraya Institute of Technology</p>
-                <p>Visvesvaraya Technological University (VTU)</p>
-                <p>Expected Graduation: 2028</p>
-            </div>
-
-        </section>
-
-        <!-- Contact Section -->
-        <section id="contact">
-
-            <h2>Contact Me</h2>
-
+          <div class="project__main">
+            <h3>Student Management System</h3>
             <p>
-                Have an opportunity or an interesting project?
-                Let's connect!
+              A project focused on managing and organizing
+              student-related information.
             </p>
+          </div>
 
-            <a href="mailto:gagangag98@gmail.com" class="email-link">
-                gagangag98@gmail.com
-            </a>
+          <p class="project__tech">Java</p>
+          <span class="status">Completed</span>
+        </li>
 
-        </section>
+        <!-- LIBRARY MANAGEMENT SYSTEM -->
+        <li class="project" data-reveal="right">
 
-    </main>
+          <div class="project__main">
+            <h3>Library Management System</h3>
+            <p>
+              A project focused on organizing library records
+              and managing book-related information.
+            </p>
+          </div>
 
-    <!-- Footer -->
-    <footer>
-        <p>© 2026 Gagan M. All Rights Reserved.</p>
-    </footer>
+          <p class="project__tech">C Programming</p>
+          <span class="status">Completed</span>
+        </li>
 
-    <script src="script.js"></script>
+        <!-- HOTEL MANAGEMENT SYSTEM -->
+        <li class="project" data-reveal="left">
+
+          <div class="project__main">
+            <h3>Hotel Management System</h3>
+            <p>
+              A project focused on organizing hotel-related
+              information and management operations.
+            </p>
+          </div>
+
+          <p class="project__tech">Hotel Management</p>
+          <span class="status">Completed</span>
+        </li>
+
+        <!-- PERSONAL PORTFOLIO -->
+        <li class="project" data-reveal="right">
+
+          <div class="project__main">
+            <h3>Personal Portfolio</h3>
+            <p>
+              My personal portfolio website showcasing
+              my skills, education and projects.
+            </p>
+          </div>
+
+          <p class="project__tech">
+            HTML, CSS, JavaScript
+          </p>
+
+          <span class="status">Completed</span>
+        </li>
+
+      </ul>
+    </section>
+
+    <!-- EDUCATION SECTION -->
+    <section class="section" id="education">
+
+      <h2 data-reveal="left">Education</h2>
+
+      <div class="edu" data-reveal="right">
+
+        <p class="edu__degree">
+          B.E. Information Science and Engineering
+        </p>
+
+        <dl>
+          <div>
+            <dt>College</dt>
+            <dd>Sir M. Visvesvaraya Institute of Technology</dd>
+          </div>
+
+          <div>
+            <dt>University</dt>
+            <dd>Visvesvaraya Technological University (VTU)</dd>
+          </div>
+
+          <div>
+            <dt>Expected graduation</dt>
+            <dd>2028</dd>
+          </div>
+        </dl>
+
+      </div>
+    </section>
+
+    <!-- CONTACT SECTION -->
+    <section class="section contact" id="contact">
+
+      <h2 data-reveal="left">Let's talk</h2>
+
+      <a class="contact__mail"
+         href="mailto:gagangag98@gmail.com"
+         data-reveal="right">
+        gagangag98@gmail.com
+      </a>
+
+      <div class="contact__actions" data-reveal="left">
+
+        <a class="btn btn--fill" href="mailto:gagangag98@gmail.com">
+          <span>Send an email</span>
+        </a>
+
+        <button class="btn" id="copyBtn" type="button">
+          <span>Copy email address</span>
+        </button>
+
+      </div>
+
+      <p class="sr-only" role="status" id="copyStatus"></p>
+
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+
+    <p>
+      Designed and coded by Gagan M.
+      &copy;
+      <span id="year">2026</span>
+    </p>
+
+    <a href="#home" class="footer__top">
+      Back to top
+    </a>
+
+  </footer>
+
+  <script src="script.js"></script>
 
 </body>
 </html>
